@@ -1,0 +1,66 @@
+### ==--  Copa do Mundo da FIFA  --== ###
+### ==--     Lista de times      --== ###
+
+# Coloque aqui o nomes dos times que irão disputar a Copa do Mundo da FIFA.
+# Os times devem ser colocados na ordem dos grupos que irão aparecer.
+# Hashtags e linhas vazias serão ignoradas.
+# O limite de caracteres para cada time é 20. (acentos como 2 caracteres)
+
+### Grupo 1 ###
+Rússia
+Arábia Saudita
+Egito
+Uruguai
+### ==---== ###
+
+### Grupo 2 ###
+Portugal
+Espanha
+Marrocos
+Irã
+### ==---== ###
+
+### Grupo 3 ###
+França
+Austrália
+Peru
+Dinamarca
+### ==---== ###
+
+### Grupo 4 ###
+Argentina
+Islândia
+Croácia
+Nigéria
+### ==---== ###
+
+### Grupo 5 ###
+Brasil
+Suíça
+Costa Rica
+Sérvia
+### ==---== ###
+
+### Grupo 6 ###
+Alemanha
+México
+Suécia
+Coreia do Sul
+### ==---== ###
+
+### Grupo 7 ###
+Bélgica
+Panamá
+Tunísia
+Inglaterra
+### ==---== ###
+
+### Grupo 8 ###
+Polônia
+Senegal
+Colômbia
+Japão
+### ==---== ###
+
+# Times após o 32º serão ignorados
+Cruzeiro
