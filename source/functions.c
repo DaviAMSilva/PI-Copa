@@ -36,7 +36,7 @@ char *ler_linha(FILE *arquivo, char *buffer)
  */
 void limpar_terminal(void) {
 #if defined(__linux__)
-    system("clear;clear");
+    system("clear");
 #elif defined(__WIN32__) || defined(WIN32)
     system("cls");
 #endif

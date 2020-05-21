@@ -1,5 +1,5 @@
 build
 bin
 .vscode
-extra/Resultado.txt
-extra/Copa.drawio
+extra/*
+!extra/Times.txt
