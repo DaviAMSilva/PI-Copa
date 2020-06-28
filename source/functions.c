@@ -35,11 +35,7 @@ char *ler_linha(FILE *arquivo, char *buffer)
  * Função para limpar o terminal,
  */
 void limpar_terminal(void) {
-#if defined(__linux__)
-    system("clear");
-#elif defined(__WIN32__) || defined(WIN32)
     system("cls");
-#endif
 }
 
 
@@ -48,12 +44,7 @@ void limpar_terminal(void) {
  * Função para limpar o buffer
  */
 void limpar_buffer(void) {
-#if defined(__linux__)
-#include <stdio_ext.h>
-    __fpurge(stdin);
-#elif defined(__WIN32__) || defined(WIN32)
     fflush(stdin);
-#endif
 }
 
 

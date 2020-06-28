@@ -1,6 +1,6 @@
 #include <stdio.h>
+#include <windows.h>
 #include <stdlib.h>
-#include <locale.h>
 #include <time.h>
 
 #include "teams.h"
@@ -12,10 +12,8 @@ int main(int argc, char const *argv[])
 {
     // Inicializando algumas coisas
     srand(time(NULL));
+    SetConsoleOutputCP(CP_UTF8);
 
-    #if defined(WIN32) || defined(__WIN32__)
-    system("chcp 65001");
-    #endif
 
 
 
