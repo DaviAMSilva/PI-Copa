@@ -17,7 +17,6 @@ int main(int argc, char const *argv[])
 
 
 
-
     // Vetor com todos os times da fase de grupo
     team_t teams_fase_grupo[NTEAMS] = {0};
 
@@ -414,7 +413,7 @@ int main(int argc, char const *argv[])
     if (argc > 2)
         output_teams = fopen(argv[2], "w");
     else
-        output_teams = fopen(OUTPUT_PDR, "w");
+        output_teams = salvar_arquivo("Por favor, escolha onde quer salvar o resultado");
 
 
 

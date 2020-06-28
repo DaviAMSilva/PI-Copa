@@ -17,12 +17,8 @@ char *ler_linha(FILE *arquivo, char *buffer)
     int n = 0, ch = 0;
 
     while ((ch = getc(arquivo)) != '\n' && ch != EOF)
-    {
         if (n < LEN)
-        {
             buffer[n++] = ch;
-        }
-    }
 
     if (ch == EOF) return NULL;
 

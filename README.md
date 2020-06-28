@@ -1,8 +1,6 @@
 # Projeto Integrador
 *Tema: A linguagem C aplicada no desenvolvimento de ferramentas para gestão e acompanhamento de torneios e competições educacionais*
 
-<br>
-
 O Projeto Integrador I, junto com as demais disciplinas, terá como objetivo auxiliar os acadêmicos no desenvolvimento de ferramentas computacionais com foco na gestão de torneios, competições e campeonatos na modalidade copa, de caráter educacional. Dentre as diversas possibilidades de uso das ferramentas a serem desenvolvidas, ressalta-se os eventos promovidos pelo próprio curso de Ciência da Computação, tais como campeonato de luta sumô entre robôs, competição de impressoras CNC, desafios de programação, bem como outras competições internas promovidas pelas demais disciplinas do curso como a aplicação de metodologias ativas de aprendizagem que geram competitividade na realização de tarefas e o uso da metodologia de  gameficação nas disciplinas.	
 Ao desenvolver as atividades aqui propostas, o acadêmico terá a oportunidade de colocar em prática e aprimorar todos os conceitos vistos nas diversas disciplinas em sala de aula. Em especial as habilidades possibilitadas pelas disciplinas Programação de Computadores e Laboratório de Programação de computadores serão mais evidentes.
 
