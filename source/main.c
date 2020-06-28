@@ -7,6 +7,7 @@
 #include "functions.h"
 #include "defaults.h"
 #include "jogos.h"
+#include "arquivos.h"
 
 int main(int argc, char const *argv[])
 {
@@ -23,8 +24,10 @@ int main(int argc, char const *argv[])
 
 
     // Arquivo com os nomes dos times
-    FILE *input_teams;
+    FILE *input_teams = NULL;
 
+    // Arquivo para salvar o resultado
+    FILE* output_teams = NULL;
 
 
     // Decidir se a escolha é aleatória
@@ -34,7 +37,7 @@ int main(int argc, char const *argv[])
 
 
 
-    //////////##########==========--------- INTRODUÇÃO ----------==========##########//////////
+    //////////##########==========---------- INTRODUÇÃO ----------==========##########//////////
 
 
 
@@ -52,7 +55,7 @@ int main(int argc, char const *argv[])
     if (argc > 1)
         input_teams = fopen(argv[1], "r");
     else
-        input_teams = fopen(INPUT_PDR, "r");
+        input_teams = abrir_arquivo("Por favor, selecione o arquivo com os nomes dos times");
 
 
 
@@ -92,7 +95,7 @@ int main(int argc, char const *argv[])
 
 
 
-    //////////##########==========--------- FASE DE GRUPOS ----------==========##########//////////
+    //////////##########==========---------- FASE DE GRUPOS ----------==========##########//////////
 
 
 
@@ -186,7 +189,7 @@ int main(int argc, char const *argv[])
 
 
 
-    //////////##########==========--------- MATA-MATA ----------==========##########//////////
+    //////////##########==========---------- MATA-MATA ----------==========##########//////////
 
 
 
@@ -209,7 +212,7 @@ int main(int argc, char const *argv[])
 
 
 
-    //////////##########==========--------- OITAVAS DE FINAL ATÉ AS SEMIFINAIS ----------==========##########//////////
+    //////////##########==========---------- OITAVAS DE FINAL ATÉ AS SEMIFINAIS ----------==========##########//////////
 
 
 
@@ -281,7 +284,7 @@ int main(int argc, char const *argv[])
 
 
 
-    //////////##########==========--------- TERCEIRO LUGAR ----------==========##########//////////
+    //////////##########==========---------- TERCEIRO LUGAR ----------==========##########//////////
 
 
 
@@ -327,7 +330,7 @@ int main(int argc, char const *argv[])
 
 
 
-    //////////##########==========--------- FINAL ----------==========##########//////////
+    //////////##########==========---------- FINAL ----------==========##########//////////
 
 
 
@@ -380,7 +383,7 @@ int main(int argc, char const *argv[])
 
 
 
-    //////////##########==========--------- FIM DO CAMPEONATO ----------==========##########//////////
+    //////////##########==========---------- FIM DO CAMPEONATO ----------==========##########//////////
 
 
 
@@ -404,9 +407,6 @@ int main(int argc, char const *argv[])
     getchar();
 
 
-
-    // Arquivo para salvar o resultado
-    FILE* output_teams;
 
 
 

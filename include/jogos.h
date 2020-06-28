@@ -1,3 +1,7 @@
+#pragma once
+
+#include <teams.h>
+
 /**
  * Função que realiza um jogo entre os times
  * nas posições 'teamA' e 'teamB'

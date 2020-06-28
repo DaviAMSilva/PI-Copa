@@ -1,3 +1,5 @@
+#pragma once
+
 // Grupos
 #define TGRPS 4
 #define NGRPS 8

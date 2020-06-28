@@ -1,3 +1,7 @@
+#pragma once
+
+#include <stdio.h>
+
 /**
  * Ler uma linha de um arquivo até achar
  * uma quebra de linha ou o fim do arquivo.

@@ -8,10 +8,15 @@ IDIR    = include
 ODIR    = build
 SDIR    = source
 BDIR    = bin
+EDIR    = extra
+
+DFTIN   = extra/Times.txt
+DFTOUT  = extra/Resultado.txt
 
 SOURCES = $(wildcard $(SDIR)/*.c)
 OBJECTS = $(patsubst $(SDIR)/%.c, $(ODIR)/%.o, $(SOURCES))
 
+BINS    = C:\MinGW\lib\libcomdlg32.a
 
 .PHONY: clean all
 
@@ -26,7 +31,7 @@ $(ODIR)/%.o: $(SDIR)/%.c | $(ODIR)
 
 # Faz a linkagem de todo o programa
 $(TARGET): $(OBJECTS) | $(BDIR)
-	$(CC) $^ -o $@ $(ARGS)
+	$(CC) $^ $(BINS) -o $@ $(ARGS)
 
 
 # Roda o programa normalmente (a e b podem ser usados como os argumentos)
@@ -36,7 +41,7 @@ run: $(TARGET)
 
 # Roda o programa com os arquivos padrões
 test: $(TARGET)
-	"$^" "extra/Times.txt" "extra/Resultado.txt"
+	$^ $(DFTIN) $(DFTOUT)
 
 
 # Cria os diretórios bin e build

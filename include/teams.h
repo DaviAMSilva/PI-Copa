@@ -1,4 +1,7 @@
+#pragma once
+
 #include <defaults.h>
+#include <stdio.h>
 
 
 // Estrutura que guarda as informações sobre os times
