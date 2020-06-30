@@ -3,3 +3,4 @@ bin
 .vscode
 extra/*
 !extra/Times.txt
+!extra/icon.ico

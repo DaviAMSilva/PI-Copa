@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <windows.h>
 
 #include "functions.h"
 #include "defaults.h"
@@ -44,11 +45,12 @@ void ler_teams(team_t *teams, FILE *arquivo)
         if (ler_linha(arquivo, buffer) == NULL)
         {
             limpar_terminal();
-            printf(MSG_ERRO_LER_ARQUIVO);
-            printf(MSG_ENTER_SAIR);
-            limpar_buffer();
-            getchar();
-            limpar_terminal();
+            // printf(MSG_ERRO_LER_ARQUIVO);
+            MessageBox(NULL, MSG_ERRO_LER_ARQUIVO, "Erro!", MB_ICONERROR | MB_OK);
+            // printf(MSG_ENTER_SAIR);
+            // limpar_buffer();
+            // getchar();
+            // limpar_terminal();
             exit(1);
         };
 

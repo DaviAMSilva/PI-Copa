@@ -10,15 +10,19 @@ SDIR    = source
 BDIR    = bin
 EDIR    = extra
 
-DFTIN   = extra/Times.txt
-DFTOUT  = extra/Resultado.txt
+DFTIN   = $(EDIR)/Times.txt
+DFTOUT  = $(EDIR)/Resultado.txt
 
 SOURCES = $(wildcard $(SDIR)/*.c)
 OBJECTS = $(patsubst $(SDIR)/%.c, $(ODIR)/%.o, $(SOURCES))
 
 BINS    = C:\MinGW\lib\libcomdlg32.a
 
-.PHONY: clean all
+RSC     = resource.rc
+RSCTRGT = $(ODIR)/resource.o
+
+
+.PHONY: all clean run test
 
 
 all: $(TARGET)
@@ -26,11 +30,11 @@ all: $(TARGET)
 
 # Compila cada arquivo
 $(ODIR)/%.o: $(SDIR)/%.c | $(ODIR)
-	$(CC) -c -o $@ $< $(ARGS)
+	$(CC) $^ -c -o $@ $(ARGS)
 
 
 # Faz a linkagem de todo o programa
-$(TARGET): $(OBJECTS) | $(BDIR)
+$(TARGET): $(OBJECTS) $(RSCTRGT) | $(BDIR)
 	$(CC) $^ $(BINS) -o $@ $(ARGS)
 
 
@@ -53,3 +57,6 @@ $(ODIR) $(BDIR):
 clean: | $(ODIR) $(BDIR)
 	if exist $(ODIR)\*.o del $(ODIR)\*.o
 	if exist $(TARGET) del $(TARGET)
+
+$(RSCTRGT): $(RSC)
+	windres $^ -O coff -o $@

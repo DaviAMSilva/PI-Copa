@@ -63,10 +63,11 @@ int main(int argc, char const *argv[])
     {
         limpar_terminal();
         printf(MSG_ERRO_ABRIR_ARQUIVO);
-        printf(MSG_ENTER_SAIR);
-        limpar_buffer();
-        getchar();
-        limpar_terminal();
+        MessageBox(NULL, MSG_ERRO_ABRIR_ARQUIVO, "Erro!", MB_ICONERROR | MB_OK);
+        // printf(MSG_ENTER_SAIR);
+        // limpar_buffer();
+        // getchar();
+        // limpar_terminal();
         return 1;
     }
 
@@ -420,11 +421,12 @@ int main(int argc, char const *argv[])
     // O arquivo falhou na abertura?
     if (output_teams == NULL)
     {
-        printf(MSG_ERRO_SALVAR_ARQUIVO);
-        printf(MSG_ENTER_CONTINUAR);
-        limpar_buffer();
-        getchar();
-        limpar_terminal();
+        // printf(MSG_ERRO_SALVAR_ARQUIVO);
+        MessageBox(NULL, MSG_ERRO_SALVAR_ARQUIVO, "Erro!", MB_ICONERROR | MB_OK);
+        // printf(MSG_ENTER_CONTINUAR);
+        // limpar_buffer();
+        // getchar();
+        // limpar_terminal();
     }
     else
     {
