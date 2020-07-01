@@ -15,10 +15,13 @@ int main(int argc, char const *argv[])
     srand(time(NULL));
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleTitle("Sistema de gerenciamento da Copa do mundo");
-    HWND win_handler = GetConsoleWindow();
-    ShowWindow(win_handler, SW_MAXIMIZE);
+    HWND window_handler = GetConsoleWindow();
+    ShowWindow(window_handler, SW_MAXIMIZE);
 
-
+    if (IDYES == MessageBox(window_handler, "Deseja usar o modo escuro?", "Escolha o modo:", MB_YESNO))
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0x0F);
+    else
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0xF0);
 
     // Vetor com todos os times da fase de grupo
     team_t teams_fase_grupo[NTEAMS] = {0};
@@ -65,7 +68,7 @@ int main(int argc, char const *argv[])
     if (input_teams == NULL)
     {
         limpar_terminal();
-        MessageBoxW(win_handler, MSG_ERRO_ABRIR_ARQUIVO, L"Erro!", MB_ICONERROR | MB_OK);
+        MessageBoxW(window_handler, MSG_ERRO_ABRIR_ARQUIVO, L"Erro!", MB_ICONERROR | MB_OK);
         return EXIT_FAILURE;
     }
 
@@ -76,7 +79,7 @@ int main(int argc, char const *argv[])
     {
         // O arquivo falhou na leitura?
         limpar_terminal();
-        MessageBoxW(win_handler, MSG_ERRO_LER_ARQUIVO, L"Erro!", MB_ICONERROR | MB_OK);
+        MessageBoxW(window_handler, MSG_ERRO_LER_ARQUIVO, L"Erro!", MB_ICONERROR | MB_OK);
         return EXIT_FAILURE;
     }
     fclose(input_teams);
@@ -149,7 +152,7 @@ int main(int argc, char const *argv[])
                     
                     // Finaliza o programa
                     case 's': case 'S':
-                        if (confirmar_sair(win_handler))
+                        if (confirmar_sair(window_handler))
                             return 0;
                         else
                         {
@@ -278,7 +281,7 @@ int main(int argc, char const *argv[])
                 
                 // Finaliza o programa
                 case 's': case 'S':
-                    if (confirmar_sair(win_handler))
+                    if (confirmar_sair(window_handler))
                         return 0;
                     else
                     {
@@ -331,7 +334,7 @@ int main(int argc, char const *argv[])
     
     // Finaliza o programa
     case 's': case 'S':
-        if (confirmar_sair(win_handler))
+        if (confirmar_sair(window_handler))
             return 0;
         else /* TODO */;
     }
@@ -375,7 +378,7 @@ int main(int argc, char const *argv[])
     
     // Finaliza o programa
     case 's': case 'S':
-        if (confirmar_sair(win_handler))
+        if (confirmar_sair(window_handler))
             return 0;
         else /* TODO */;
     }
@@ -437,7 +440,7 @@ int main(int argc, char const *argv[])
     // O arquivo falhou na abertura?
     if (output_teams == NULL)
     {
-        MessageBoxW(win_handler, MSG_ERRO_SALVAR_ARQUIVO, L"Erro!", MB_ICONERROR | MB_OK);
+        MessageBoxW(window_handler, MSG_ERRO_SALVAR_ARQUIVO, L"Erro!", MB_ICONERROR | MB_OK);
     }
     else
     {

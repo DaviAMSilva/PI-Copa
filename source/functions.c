@@ -98,9 +98,9 @@ FILE *salvar_arquivo(const char *msg)
         return NULL;
 }
 
-bool confirmar_sair(HWND win_handler)
+bool confirmar_sair(HWND window_handler)
 {
-    if (MessageBoxW(win_handler, L"Deseja mesmo sair do programa?", L"Confimar saída", MB_ICONWARNING | MB_YESNO | MB_DEFBUTTON2) == IDYES)
+    if (MessageBoxW(window_handler, L"Deseja mesmo sair do programa?", L"Confimar saída", MB_ICONWARNING | MB_YESNO | MB_DEFBUTTON2) == IDYES)
         return true;
     else
         return false;

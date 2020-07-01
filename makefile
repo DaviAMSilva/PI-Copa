@@ -23,8 +23,6 @@ RSCTRGT = $(ODIR)/resource.o
 
 
 .PHONY: all clean run test
-
-
 all: $(TARGET)
 
 
@@ -58,5 +56,6 @@ clean: | $(ODIR) $(BDIR)
 	if exist $(ODIR)\*.o del $(ODIR)\*.o
 	if exist $(TARGET) del $(TARGET)
 
+# Compila o arquivo com metadados
 $(RSCTRGT): $(RSC)
 	windres $^ -O coff -o $@

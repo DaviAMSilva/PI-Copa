@@ -2,6 +2,9 @@
 
 #include <stdio.h>
 #include <windows.h>
+#include <stdbool.h>
+
+#include "defaults.h"
 
 FILE *abrir_arquivo (const char *msg);
 FILE *salvar_arquivo(const char *msg);
@@ -30,4 +33,4 @@ void limpar_buffer(void);
 void sair(void);
 
 
-bool confirmar_sair(HWND win_handler);
+bool confirmar_sair(HWND window_handler);
