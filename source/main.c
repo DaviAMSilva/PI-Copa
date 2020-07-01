@@ -14,7 +14,7 @@ int main(int argc, char const *argv[])
     // Inicializando algumas coisas
     srand(time(NULL));
     SetConsoleOutputCP(CP_UTF8);
-    SetConsoleTitle("Sistema de gerenciamento da Copa do Mundo da FIFA");
+    SetConsoleTitle(TITULO);
     HWND window_handler = GetConsoleWindow();
     ShowWindow(window_handler, SW_MAXIMIZE);
 
@@ -60,7 +60,7 @@ int main(int argc, char const *argv[])
     if (argc > 1)
         input_teams = fopen(argv[1], "r");
     else
-        input_teams = abrir_arquivo("Selecione o arquivo com os nomes dos times:");
+        input_teams = abrir_arquivo(MSG_ABRIR_ARQUIVO);
 
 
 
@@ -439,7 +439,7 @@ int main(int argc, char const *argv[])
 
     // Exibe o a lista de todos os times
     limpar_terminal();
-    printf("\n  Resultado final do campeonato:\n\n");
+    printf(MSG_RESULTADO_FINAL);
     exibir_teams_todos(teams_fase_grupo);
     printf(MSG_ENTER_CONTINUAR);
     limpar_buffer();
@@ -462,7 +462,7 @@ int main(int argc, char const *argv[])
     if (argc > 2)
         output_teams = fopen(argv[2], "w");
     else
-        output_teams = salvar_arquivo("Escolha onde quer salvar o resultado:");
+        output_teams = salvar_arquivo(MSG_SALVAR_ARQUIVO);
 
 
 

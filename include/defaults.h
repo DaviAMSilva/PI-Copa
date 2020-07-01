@@ -9,8 +9,7 @@
 
 // Texto
 #define LEN 30
-#define INPUT_PDR  "Times.txt"
-#define OUTPUT_PDR "Resultado.txt"
+#define TITULO "Sistema de gerenciamento da Copa do Mundo da FIFA"
 
 
 
@@ -30,8 +29,8 @@
 #define MSG_INICIO_TERCEIRO_LUGAR   "\n  Começa agora o jogo pelo terceiro lugar!\n"
 #define MSG_INICIO_FINAIS           "\n  Começa agora a final da Copa do Mundo da FIFA!\n"
 
-#define MSG_ERRO_LER_ARQUIVO        L"Algo deu errado ao tentar ler os times. Provavelmente há menos de 32 times escritos no arquivo. Por favor, tenha certeza que todos os times estejam corretos e tente novamente."
-#define MSG_ERRO_ABRIR_ARQUIVO      L"Algo deu errado ao tentar abrir o arquivo. Por favor, tenha certeza que o arquivo foi nomeado corretamente e tente novamente."
+#define MSG_ERRO_LER_ARQUIVO        L"Algo deu errado ao tentar ler os times.\nPor favor, tenha certeza que todos os times estejam corretos e tente novamente."
+#define MSG_ERRO_ABRIR_ARQUIVO      L"Algo deu errado ao tentar abrir o arquivo.\nPor favor, tente novamente."
 #define MSG_ERRO_SALVAR_ARQUIVO     L"Algo deu errado ao tentar criar o arquivo para salvar o resultado."
 
 #define MSG_OPCOES_FASE_GRUPOS      "\n  Agora você tem algumas opções:\n\n  'A' - Aletorizar a fase de grupos    \n  'S' - Sair do programa\n  'R' - Realizar o próximo jogo\n  \n  Próximo jogo: | %s | x | %s |  \n  >>> "
@@ -40,8 +39,8 @@
 #define MSG_EXIBIR_TEAMS_TODOS      "\n  Status atual do campeonato:\n"
 #define MSG_EXIBIR_TEAMS_GRUPO      "\n  Status atual do grupo %c:\n\n"
 
-#define MSG_EXIBIR_FIM              "\n  A Copa do Mundo da FIFA chegou ao fim!\n\n  O campeão foi o time:\n  | %s |\n\n  Aqui está a classificação final dos times participants:\n\n"
 #define MSG_SALVAR_RESULTADO        "\n  O resultado do campeonato será salvo no em um arquivo de texto.\n"
+#define MSG_RESULTADO_FINAL         "\n  Resultado final do campeonato:\n\n"
 
 #define MSG_ENTER_CONTINUAR         "\n  Aperte ENTER para continuar..."
 #define MSG_ENTER_SAIR              "\n  Aperte ENTER para sair..."
@@ -58,3 +57,6 @@
 #define MSG_JOGO_FOI_PRORROGADO     "\n  O jogo foi para a prorrogação\n"
 #define MSG_JOGO_FOI_PENALTIS       "\n  O jogo foi para os penâltis\n"
 #define MSG_GANHOU_PENALTIS         "\n  Quais dos times ganhou os penâltis?\n  1 - %s\n  2 - %s\n  >>> "
+
+#define MSG_ABRIR_ARQUIVO          "Selecione o arquivo com os nomes dos times:"
+#define MSG_SALVAR_ARQUIVO          "Escolha onde quer salvar o resultado:"
