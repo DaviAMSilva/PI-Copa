@@ -1,7 +1,9 @@
 #pragma once
 
-#include <defaults.h>
 #include <stdio.h>
+#include <stdbool.h>
+
+#include "defaults.h"
 
 
 // Estrutura que guarda as informações sobre os times
@@ -27,7 +29,7 @@ typedef struct Team
  * Lê os times a partir do arquivo 'arquivo'
  * e os salva no vetor 'teams'
  */
-void ler_teams(team_t *teams, FILE *arquivo);
+bool ler_teams(team_t *teams, FILE *arquivo);
 
 /**
  * Salva todos os times na ordem

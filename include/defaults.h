@@ -30,9 +30,9 @@
 #define MSG_INICIO_TERCEIRO_LUGAR   "\n  Começa agora o jogo pelo terceiro lugar!\n"
 #define MSG_INICIO_FINAIS           "\n  Começa agora a final da Copa do Mundo da FIFA!\n"
 
-#define MSG_ERRO_LER_ARQUIVO        "Algo deu errado ao tentar ler os times. Provavelmente há menos de 32 times escritos no arquivo. Por favor, tenha certeza que todos os times estejam corretos e tente novamente."
-#define MSG_ERRO_ABRIR_ARQUIVO      "Algo deu errado ao tentar abrir o arquivo. Por favor, tenha certeza que o arquivo foi nomeado corretamente e tente novamente."
-#define MSG_ERRO_SALVAR_ARQUIVO     "Algo deu errado ao tentar criar o arquivo para salvar o resultado. Por favor, anote o resultado antes de continuar."
+#define MSG_ERRO_LER_ARQUIVO        L"Algo deu errado ao tentar ler os times. Provavelmente há menos de 32 times escritos no arquivo. Por favor, tenha certeza que todos os times estejam corretos e tente novamente."
+#define MSG_ERRO_ABRIR_ARQUIVO      L"Algo deu errado ao tentar abrir o arquivo. Por favor, tenha certeza que o arquivo foi nomeado corretamente e tente novamente."
+#define MSG_ERRO_SALVAR_ARQUIVO     L"Algo deu errado ao tentar criar o arquivo para salvar o resultado. Por favor, anote o resultado antes de continuar."
 
 #define MSG_OPCOES_FASE_GRUPOS      "\n  Agora você tem algumas opções:\n\n  'A' - Aletorizar a fase de grupos    \n  'S' - Sair do programa\n  ' ' - Realizar o próximo jogo\n  \n  Próximo jogo: | %s | x | %s |  \n  >>> "
 #define MSG_OPCOES_MATA_MATA        "\n  Agora você tem algumas opções:\n\n  'A' - Aletorizar os jogos dessa etapa\n  'S' - Sair do programa\n  ' ' - Realizar o próximo jogo\n  \n  Próximo jogo: | %s | x | %s |  \n  >>> "

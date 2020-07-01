@@ -4,7 +4,6 @@
 # Coloque aqui o nomes dos times que irão disputar a Copa do Mundo da FIFA.
 # Os times devem ser colocados na ordem dos grupos que irão aparecer.
 # Hashtags e linhas vazias serão ignoradas.
-# O limite de caracteres para cada time é 20. (acentos como 2 caracteres)
 
 ### Grupo 1 ###
 Rússia

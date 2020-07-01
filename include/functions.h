@@ -1,6 +1,10 @@
 #pragma once
 
 #include <stdio.h>
+#include <windows.h>
+
+FILE *abrir_arquivo (const char *msg);
+FILE *salvar_arquivo(const char *msg);
 
 /**
  * Ler uma linha de um arquivo até achar
@@ -24,3 +28,6 @@ void limpar_buffer(void);
  * Fecha o programa com uma mensagem de despedida
  */
 void sair(void);
+
+
+bool confirmar_sair(HWND win_handler);

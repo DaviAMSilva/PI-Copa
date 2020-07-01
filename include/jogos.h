@@ -1,6 +1,6 @@
 #pragma once
 
-#include <teams.h>
+#include "teams.h"
 
 /**
  * Função que realiza um jogo entre os times

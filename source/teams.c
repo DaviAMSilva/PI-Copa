@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <windows.h>
+#include <stdbool.h>
 
 #include "functions.h"
 #include "defaults.h"
@@ -32,7 +33,7 @@ typedef struct Team
  * Lê os times a partir do arquivo 'arquivo'
  * e os salva no vetor 'teams'
  */
-void ler_teams(team_t *teams, FILE *arquivo)
+bool ler_teams(team_t *teams, FILE *arquivo)
 {
     int i = 0;
     char buffer[LEN];
@@ -44,14 +45,7 @@ void ler_teams(team_t *teams, FILE *arquivo)
 
         if (ler_linha(arquivo, buffer) == NULL)
         {
-            limpar_terminal();
-            // printf(MSG_ERRO_LER_ARQUIVO);
-            MessageBox(NULL, MSG_ERRO_LER_ARQUIVO, "Erro!", MB_ICONERROR | MB_OK);
-            // printf(MSG_ENTER_SAIR);
-            // limpar_buffer();
-            // getchar();
-            // limpar_terminal();
-            exit(1);
+            return false;
         };
 
         // Se o nome começa por # ou está vazio ele é desconsiderado
@@ -75,6 +69,8 @@ void ler_teams(team_t *teams, FILE *arquivo)
             i++;
         }
     }
+
+    return true;
 }
 
 

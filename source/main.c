@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <windows.h>
+#include <stdbool.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -7,13 +8,15 @@
 #include "functions.h"
 #include "defaults.h"
 #include "jogos.h"
-#include "arquivos.h"
 
 int main(int argc, char const *argv[])
 {
     // Inicializando algumas coisas
     srand(time(NULL));
     SetConsoleOutputCP(CP_UTF8);
+    SetConsoleTitle("Sistema de gerenciamento da Copa do mundo");
+    HWND win_handler = GetConsoleWindow();
+    ShowWindow(win_handler, SW_MAXIMIZE);
 
 
 
@@ -62,19 +65,20 @@ int main(int argc, char const *argv[])
     if (input_teams == NULL)
     {
         limpar_terminal();
-        printf(MSG_ERRO_ABRIR_ARQUIVO);
-        MessageBox(NULL, MSG_ERRO_ABRIR_ARQUIVO, "Erro!", MB_ICONERROR | MB_OK);
-        // printf(MSG_ENTER_SAIR);
-        // limpar_buffer();
-        // getchar();
-        // limpar_terminal();
-        return 1;
+        MessageBoxW(win_handler, MSG_ERRO_ABRIR_ARQUIVO, L"Erro!", MB_ICONERROR | MB_OK);
+        return EXIT_FAILURE;
     }
 
 
 
     // Ler o arquivo e salva os times
-    ler_teams(teams_fase_grupo, input_teams);
+    if (!ler_teams(teams_fase_grupo, input_teams))
+    {
+        // O arquivo falhou na leitura?
+        limpar_terminal();
+        MessageBoxW(win_handler, MSG_ERRO_LER_ARQUIVO, L"Erro!", MB_ICONERROR | MB_OK);
+        return EXIT_FAILURE;
+    }
     fclose(input_teams);
     
 
@@ -123,13 +127,13 @@ int main(int argc, char const *argv[])
 
 
 
-            limpar_terminal();
-
             // O laço interior trata os jogos para cada grupo
             for (int ngrupo = 0; ngrupo < NGRPS; ngrupo++)
             {
                 if (!aleatorio)
                 {
+                    limpar_terminal();
+
                     // Dá opções ao usuário
                     printf(MSG_OPCOES_FASE_GRUPOS, (teams_fase_grupo + ngrupo * TGRPS + njogoA)->nome, (teams_fase_grupo + ngrupo * TGRPS + njogoB)->nome);
                     limpar_buffer();
@@ -145,8 +149,13 @@ int main(int argc, char const *argv[])
                     
                     // Finaliza o programa
                     case 's': case 'S':
-                        sair();
-                        return 0;
+                        if (confirmar_sair(win_handler))
+                            return 0;
+                        else
+                        {
+                            ngrupo--;
+                            continue;
+                        }
                     }
                 }
 
@@ -269,8 +278,13 @@ int main(int argc, char const *argv[])
                 
                 // Finaliza o programa
                 case 's': case 'S':
-                    sair();
-                    return 0;
+                    if (confirmar_sair(win_handler))
+                        return 0;
+                    else
+                    {
+                        i -= j;
+                        continue;
+                    };
                 }
             }
 
@@ -317,8 +331,9 @@ int main(int argc, char const *argv[])
     
     // Finaliza o programa
     case 's': case 'S':
-        sair();
-        return 0;
+        if (confirmar_sair(win_handler))
+            return 0;
+        else /* TODO */;
     }
 
 
@@ -360,8 +375,9 @@ int main(int argc, char const *argv[])
     
     // Finaliza o programa
     case 's': case 'S':
-        sair();
-        return 0;
+        if (confirmar_sair(win_handler))
+            return 0;
+        else /* TODO */;
     }
 
 
@@ -421,12 +437,7 @@ int main(int argc, char const *argv[])
     // O arquivo falhou na abertura?
     if (output_teams == NULL)
     {
-        // printf(MSG_ERRO_SALVAR_ARQUIVO);
-        MessageBox(NULL, MSG_ERRO_SALVAR_ARQUIVO, "Erro!", MB_ICONERROR | MB_OK);
-        // printf(MSG_ENTER_CONTINUAR);
-        // limpar_buffer();
-        // getchar();
-        // limpar_terminal();
+        MessageBoxW(win_handler, MSG_ERRO_SALVAR_ARQUIVO, L"Erro!", MB_ICONERROR | MB_OK);
     }
     else
     {
@@ -445,5 +456,5 @@ int main(int argc, char const *argv[])
 
 
 
-    return 0;
+    return EXIT_SUCCESS;
 }
