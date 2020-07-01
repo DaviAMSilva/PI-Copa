@@ -10,14 +10,14 @@ BEGIN
         BLOCK "040904E4"
         BEGIN
             VALUE "CompanyName",      ""
-            VALUE "FileDescription",  "Aplicação para gerenciamento de uma copa do mundo"
+            VALUE "FileDescription",  "Aplicação para gerenciamento de uma Copa do Mundo da FIFA"
             VALUE "FileVersion",      "1.0"
-            VALUE "InternalName",     "Copa"
+            VALUE "InternalName",     "Copa do Mundo da FIFA"
             VALUE "LegalCopyright",   ""
             VALUE "LegalTrademarks1", ""
             VALUE "LegalTrademarks2", ""
-            VALUE "OriginalFilename", "Copa.exe"
-            VALUE "ProductName",      "Copa"
+            VALUE "OriginalFilename", "Copa_do_Mundo_da_FIFA.exe"
+            VALUE "ProductName",      "Copa do Mundo da FIFA"
             VALUE "ProductVersion",   "2.0"
         END
     END

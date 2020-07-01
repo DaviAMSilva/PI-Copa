@@ -1,5 +1,5 @@
 CC      = gcc
-NOME    = Copa
+NOME    = Copa_do_Mundo_da_FIFA
 TARGET  = $(BDIR)\$(NOME).exe
 
 ARGS    = -I $(IDIR) -Wall
@@ -10,8 +10,8 @@ SDIR    = source
 BDIR    = bin
 EDIR    = extra
 
-DFTIN   = $(EDIR)/Times.txt
-DFTOUT  = $(EDIR)/Resultado.txt
+DFTIN   = $(EDIR)\Times.txt
+DFTOUT  = $(EDIR)\Resultado.txt
 
 SOURCES = $(wildcard $(SDIR)/*.c)
 OBJECTS = $(patsubst $(SDIR)/%.c, $(ODIR)/%.o, $(SOURCES))
@@ -19,7 +19,7 @@ OBJECTS = $(patsubst $(SDIR)/%.c, $(ODIR)/%.o, $(SOURCES))
 BINS    = C:\MinGW\lib\libcomdlg32.a
 
 RSC     = resource.rc
-RSCTRGT = $(ODIR)/resource.o
+RSCTRGT = $(ODIR)\resource.o
 
 
 .PHONY: all clean run test

@@ -47,19 +47,6 @@ void limpar_buffer(void) {
 
 
 
-/**
- * Fecha o programa com uma mensagem de despedida
- */
-void sair(void)
-{
-    limpar_terminal();
-    printf(MSG_SAIR);
-    printf(MSG_ENTER_SAIR);
-    limpar_buffer();
-    getchar();
-    limpar_terminal();
-}
-
 FILE *abrir_arquivo(const char *msg)
 {
     OPENFILENAME ofn = {0};
@@ -104,4 +91,47 @@ bool confirmar_sair(HWND window_handler)
         return true;
     else
         return false;
+}
+
+void imprimir_ganhador(const char *ganhador, HWND console_handler, WORD modo_cor)
+{
+    WORD amarelo  = (modo_cor == 0xF0) ? 0xF6 : 0x0E;
+    WORD vermelho = (modo_cor == 0xF0) ? 0xF4 : 0x0C;
+    WORD azul     = (modo_cor == 0xF0) ? 0xF3 : 0x0B;
+    WORD verde    = (modo_cor == 0xF0) ? 0xF2 : 0x0A;
+
+     SetConsoleTextAttribute(console_handler, amarelo);
+     printf("\n\
+            ___________\n\
+       .---'::'        `---.\n\
+      (::::::'              )\n\
+    __|`-----._______.-----'|__\n\
+   /  |              :::::::|  \\\n\
+  |   |               ::::::|   |\n\
+  |   |                :::::|   |\n\
+   \\  |               ::::::|  /\n\
+    \\ |"); SetConsoleTextAttribute(console_handler, vermelho); printf("    Copa do Mundo   "); SetConsoleTextAttribute(console_handler, amarelo); printf(":| /\n\
+     \\|"); SetConsoleTextAttribute(console_handler, vermelho); printf("       da FIFA   "); SetConsoleTextAttribute(console_handler, amarelo); printf("::::|/\n\
+      |               ::::::|\n\
+      |              .::::::|\n\
+      \\             :::::::|\n\
+       \\            ::::::/\n\
+        `.        .:::::::'\n\
+          `-._  .::::::-'\n\
+              |  \"\"\"|\"\n\
+              |  :::|\n\
+              |   ::|\n\
+             /     ::\\\n\
+        __.-'      :::`-.__\n\
+       (_           ::::::_)\n\
+         `\"\"\"---------\"\"\"'\n\
+\n");
+
+    SetConsoleTextAttribute(console_handler, verde);
+    printf("\n      GANHADOR:      ");
+
+    SetConsoleTextAttribute(console_handler, azul);
+    printf("\n      %s\n", ganhador);
+
+    SetConsoleTextAttribute(console_handler, modo_cor);
 }

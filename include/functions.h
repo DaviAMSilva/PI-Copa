@@ -27,10 +27,6 @@ void limpar_terminal(void);
  */
 void limpar_buffer(void);
 
-/**
- * Fecha o programa com uma mensagem de despedida
- */
-void sair(void);
-
-
 bool confirmar_sair(HWND window_handler);
+
+void imprimir_ganhador(const char *ganhador, HWND console_handler, WORD modo_cor);
